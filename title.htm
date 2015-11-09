@@ -1,0 +1,73 @@
+<html>
+<style type="text/css">
+<!--
+.STYLE6 {
+	font-size: medium;
+	font-weight: bold;
+	color: #CC0000;
+}
+.STYLE7 {color: #3300FF}
+-->
+</style>
+<body>
+    <BR> <BR> <BR> <BR> <BR> <BR> <BR> <BR> <BR>
+{% if books %}  
+	<p align="center"><strong>Found</strong> {{ books|length }} book{{ books|pluralize }}.</p>    
+	<ul>    
+	 
+		<div align="center">{% for book in books %}        
+		</div>
+		<li>
+		  <div align="center"><a href="authorandbook/?q={{book}}">{{book}}
+		    </a> &nbsp;&nbsp;&nbsp;<a href="delete/?q={{book}}">Delete
+		      </a>
+	      </div>
+		</li>	           
+		<div align="center">{% endfor %}    
+	    </div>
+	</ul>
+    
+	<div align="center"></div>
+     <BR> <BR> <BR> <BR>
+	<div align="center"><span class="STYLE6">click the Delete to delete the book. <BR> 
+    </span><BR>
+	  
+	  {% else %}
+	  <BR>
+	  <BR>
+	  <BR>
+	  <BR>
+	  <BR>
+	  <BR>
+	  <BR>
+	  <BR>
+	  <BR>
+	  <BR>
+	  <BR>
+	  <BR>
+	  <BR>
+	  <BR>
+	  <BR>
+</div>
+	<Blink>
+    <div class="text" style=" text-align:center;">
+      <div align="center"><big><b>No books matched your search criteria.</b></big></div>
+    </div>
+    </Blink>
+    <div align="center"><BR>
+      <BR>
+      <BR>
+      {% endif %}
+      <span class="STYLE7"><strong>click the return button to search again.<BR>click the add button to add books</strong><BR>
+      
+      </span><BR>
+          <div align="center">
+    <input type="button" name="button1" value="Add books"  onclick="window.location='Add';">
+         </div>
+           <div align="center">
+    <input type="button" name="button1" value="update books"  onclick="window.location='update_form';">
+         </div>
+       <input type="button" name="button1" value="return"  onclick="window.location='search_form';">	
+</div>
+</body> 
+</html>
